@@ -1,0 +1,41 @@
+patient_hanks:
+  is_patient: true
+  is_doctor: false
+  is_admin: false
+  first_name: Tom
+  last_name: Hanks
+
+patient_cruz:
+  is_patient: true
+  is_doctor: false
+  is_admin: false
+  first_name: Tom
+  last_name: Cruz
+
+patient_cage:
+  is_patient: true
+  is_doctor: false
+  is_admin: false
+  first_name: Nicolas
+  last_name: Cage
+
+dr_smith:
+  is_patient: false
+  is_doctor: true
+  is_admin: false
+  first_name: Will
+  last_name: Smith
+
+dr_decaprio:
+  is_patient: false
+  is_doctor: true
+  is_admin: false
+  first_name: Leonardo
+  last_name: DeCaprio
+
+admin_deniro:
+  is_patient: false
+  is_doctor: false
+  is_admin: true
+  first_name: Robert
+  last_name: DeNiro

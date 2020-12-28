@@ -1,0 +1,17 @@
+patient_hanks_outbox:
+  user: patient_hanks
+
+patient_cruz_outbox:
+  user: patient_cruz
+
+patient_cage_outbox:
+  user: patient_cage
+
+dr_smith_outbox:
+  user: dr_smith
+
+dr_decaprio_outbox:
+  user: dr_decaprio
+
+admin_deniro_outbox:
+  user: admin_deniro

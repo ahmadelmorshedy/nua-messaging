@@ -1,0 +1,43 @@
+from_dr_smith_to_patient_hanks:
+  body: 'New message form doctor'
+  outbox: dr_smith_outbox
+  inbox: patient_hanks_inbox
+  read: false
+  created_at: <%= Time.now.to_s(:db) %>
+
+old_from_decaprio_to_patient_cruz:
+  body: 'Old message form doctor'
+  outbox: dr_decaprio_outbox
+  inbox: patient_cruz_inbox
+  read: false
+  created_at: <%= (Time.now - 10.days).to_s(:db) %>
+
+message_1_from_patient_cruz_to_dr_decaprio:
+  body: 'message 1 to doctor'
+  outbox: patient_cruz_outbox
+  inbox: dr_decaprio_inbox
+  read: false
+
+message_2_from_patient_cruz_to_dr_decaprio:
+  body: 'message 2 to doctor'
+  outbox: patient_cruz_outbox
+  inbox: dr_decaprio_inbox
+  read: false
+
+message_3_from_patient_cruz_to_dr_smith:
+  body: 'message 3 to doctor'
+  outbox: patient_cruz_outbox
+  inbox: dr_smith_inbox
+  read: false
+
+message_4_from_patient_hanks_to_dr_smith:
+  body: 'message 4 to doctor'
+  outbox: patient_hanks_outbox
+  inbox: dr_smith_inbox
+  read: false
+
+message_5_from_patient_hanks_to_dr_smith:
+  body: 'message 5 to doctor'
+  outbox: patient_hanks_outbox
+  inbox: dr_smith_inbox
+  read: false

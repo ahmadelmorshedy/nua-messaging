@@ -8,4 +8,21 @@ class MessagesController < ApplicationController
     @message = Message.new
   end
 
+  def create
+    if Message.create_message(messages_params[:body],
+                              User.default_doctor,
+                              User.current)
+      flash[:notice] = 'Message sent successfully'
+      redirect_to messages_path
+    else
+      flash[:alert] = 'Something went wrong - unable to create message'
+      render 'new'
+    end
+  end
+
+  private
+
+  def messages_params
+    params[:message].permit(:body)
+  end
 end

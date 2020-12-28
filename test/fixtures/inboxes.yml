@@ -1,0 +1,17 @@
+patient_hanks_inbox:
+  user: patient_hanks
+
+patient_cruz_inbox:
+  user: patient_cruz
+
+patient_cage_inbox:
+  user: patient_cage
+
+dr_smith_inbox:
+  user: dr_smith
+
+dr_decaprio_inbox:
+  user: dr_decaprio
+
+admin_deniro_inbox:
+  user: admin_deniro
