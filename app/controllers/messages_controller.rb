@@ -1,7 +1,18 @@
 class MessagesController < ApplicationController
 
+  def index
+    if params[:source] == 'outbox'
+      @messages = User.current.outbox.messages
+      @messages_source = 'Outbox'
+    else
+      @messages = User.current.inbox.messages
+      @messages_source = 'Inbox'
+    end
+  end
+
   def show
     @message = Message.find(params[:id])
+    @messages_source = params[:source]
   end
 
   def new

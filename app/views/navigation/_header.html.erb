@@ -6,10 +6,11 @@
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to messages_path, class: 'nav-link' do %>
-          Inbox
-        <% end  %>
+      <li class="nav-item <%= (@messages_source == 'Outbox')? '' : 'active' %>">
+        <%= link_to 'Inbox', messages_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item <%= (@messages_source == 'Outbox')? 'active' : '' %>">
+        <%= link_to 'Outbox', messages_path(source: 'outbox'), class: 'nav-link' %>
       </li>
     </ul>
   </div>
