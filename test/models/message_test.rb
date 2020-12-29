@@ -1,6 +1,5 @@
 require 'test_helper'
 
-
 class MessageTest < ActiveSupport::TestCase
   test '#message_created_has_unread_status' do
     user = users(:patient_hanks)
