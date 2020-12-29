@@ -2,10 +2,10 @@ class MessagesController < ApplicationController
 
   def index
     if params[:source] == 'outbox'
-      @messages = User.current.outbox.messages
+      @messages = User.current.outbox.messages.paginate(page: params[:page])
       @messages_source = 'Outbox'
     else
-      @messages = User.current.inbox.messages
+      @messages = User.current.inbox.messages.paginate(page: params[:page])
       @messages_source = 'Inbox'
     end
   end
