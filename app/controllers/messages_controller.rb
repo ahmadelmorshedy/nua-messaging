@@ -12,6 +12,7 @@ class MessagesController < ApplicationController
 
   def show
     @message = Message.find(params[:id])
+    @message.mark_as_read
     @messages_source = params[:source]
   end
 
@@ -20,13 +21,15 @@ class MessagesController < ApplicationController
   end
 
   def create
-    if Message.create_message(messages_params[:body],
-                              User.default_doctor,
-                              User.current)
+    begin
+      Message.create_message(messages_params[:body],
+                            User.default_doctor,
+                            User.current)
       flash[:notice] = 'Message sent successfully'
       redirect_to messages_path
-    else
-      flash[:alert] = 'Something went wrong - unable to create message'
+    rescue Exception => _e
+      flash.now[:alert] = 'Something went wrong - unable to create message'
+      @message = Message.new
       render 'new'
     end
   end

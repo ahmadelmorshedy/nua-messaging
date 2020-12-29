@@ -33,6 +33,13 @@ dr_decaprio:
   first_name: Leonardo
   last_name: DeCaprio
 
+dr_gibson:
+  is_patient: false
+  is_doctor: true
+  is_admin: false
+  first_name: Mel
+  last_name: Gibson
+
 admin_deniro:
   is_patient: false
   is_doctor: false

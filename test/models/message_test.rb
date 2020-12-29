@@ -1,6 +1,3 @@
-# require 'minitest/autorun'
-# require './app/models/application_record'
-# require './app/models/message'
 require 'test_helper'
 
 
@@ -45,5 +42,23 @@ class MessageTest < ActiveSupport::TestCase
 
     assert doctor.inbox.messages.last.body != 'test_message'
     assert admin.inbox.messages.last.body == 'test_message'
+  end
+
+  test '#creating a message increments count of recipient inbox unread count' do
+    user = users(:patient_cage)
+    doctor = users(:dr_gibson)
+
+    3.times { Message.create_message('test_message', doctor, user) }
+
+    assert doctor.inbox.reload.unread_count == 3
+  end
+
+  test '#when a user reads a message, it decrements its recipient inbox unread count' do
+    doctor = users(:dr_smith)     # having initialy uunread_couunt = 3
+
+    doctor.inbox.messages.first.mark_as_read
+    doctor.inbox.messages.last.mark_as_read
+
+    assert doctor.inbox.unread_count == 1
   end
 end

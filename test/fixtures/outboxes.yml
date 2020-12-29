@@ -13,5 +13,8 @@ dr_smith_outbox:
 dr_decaprio_outbox:
   user: dr_decaprio
 
+dr_gibson_outbox:
+  user: dr_gibson
+
 admin_deniro_outbox:
   user: admin_deniro

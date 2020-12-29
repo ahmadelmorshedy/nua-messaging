@@ -1,17 +1,27 @@
 patient_hanks_inbox:
   user: patient_hanks
+  unread_count: 1
 
 patient_cruz_inbox:
   user: patient_cruz
+  unread_count: 1
 
 patient_cage_inbox:
   user: patient_cage
+  unread_count: 1
 
 dr_smith_inbox:
   user: dr_smith
+  unread_count: 3
 
 dr_decaprio_inbox:
   user: dr_decaprio
+  unread_count: 2
+
+dr_gibson_inbox:
+  user: dr_gibson
+  unread_count: 0
 
 admin_deniro_inbox:
   user: admin_deniro
+  unread_count: 0

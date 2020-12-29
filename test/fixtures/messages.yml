@@ -12,6 +12,13 @@ old_from_decaprio_to_patient_cruz:
   read: false
   created_at: <%= (Time.now - 10.days).to_s(:db) %>
 
+form_dr_gibson_to_patient_cage:
+  body: 'New message form doctor'
+  outbox: dt_gibson_outbox
+  inbox: patient_cage_inbox
+  read: false
+  created_at: <%= Time.now.to_s(:db) %>
+
 message_1_from_patient_cruz_to_dr_decaprio:
   body: 'message 1 to doctor'
   outbox: patient_cruz_outbox
